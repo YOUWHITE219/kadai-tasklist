@@ -51,6 +51,9 @@ private
 
 def set_task
   @task = current_user.tasks.find(params[:id])
+  unless @task
+   redirect_to root_url
+  end
 end
 
 def task_params
